@@ -53,6 +53,12 @@ define('fcf-epic', [], function() {
         LAUNCH_ACTIVITY: "Epic.Clinical.Informatics.Web.LaunchActivity"
     };
 
+    var HEADER =
+        '<div style="float:right;display:inline-flex;align-items:flex-start">' +
+            '<span class="fa fa-shopping-cart" style="font-size:1.85em"></span>' +
+            '<span class="badge badge-pill badge-primary" style="font-size:.5em"></span>' +
+        '</div>';
+
     var agl_sessions = [];
 
     var okResponse = {actionExecuted: true, errorCodes: []};
@@ -133,22 +139,28 @@ define('fcf-epic', [], function() {
         });
 
         if (!session) {
-            var header = $('<div></div>').hide().insertBefore(getIFrame(source));
+            var header = $(HEADER).hide().insertBefore(getIFrame(source));
             session = {source: source, cart: [], header: header};
             agl_sessions.push(session);
+            header.tooltip({
+                html: true,
+                title: function() {return '<span class="text-monospace">' + session.cart.join('\n') + '</span>'}
+            });
         }
 
         return session;
     }
 
     function updateHeader(session) {
-        session.cart.length ? session.header.show() : session.header.hide();
-        session.header.text('Items in cart: ' + session.cart.length);
+        var cart = session.cart,
+            header = session.header;
+        cart.length ? header.show() : header.hide();
+        header.find('.badge').text(cart.length);
     }
 
     function initialHandshake(request, session) {
         session.token = createToken();
-        session.cart = [];
+        session.cart.length = 0;
         session.header.hide();
 
         return {
