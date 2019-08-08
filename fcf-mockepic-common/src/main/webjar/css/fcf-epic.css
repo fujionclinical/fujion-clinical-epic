@@ -1,0 +1,18 @@
+.fcf-epic-header {
+    display: inline-flex;
+    align-items: flex-start;
+    width: 100%;
+    background: lightyellow;
+}
+
+.fcf-epic-header > span:first-child {
+    flex: 1;
+}
+
+.fcf-epic-header > .fa {
+    font-size: 1.85em;
+}
+
+.fcf-epic-header > .badge {
+    font-size: .5em;
+}

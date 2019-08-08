@@ -1,6 +1,6 @@
 'use strict';
 
-define('fcf-epic', [], function() {
+define('fcf-epic', ['fcf-epic-css'], function() {
 
     var AglAction = {
         /**
@@ -54,9 +54,10 @@ define('fcf-epic', [], function() {
     };
 
     var HEADER =
-        '<div style="float:right;display:inline-flex;align-items:flex-start">' +
-            '<span class="fa fa-shopping-cart" style="font-size:1.85em"></span>' +
-            '<span class="badge badge-pill badge-primary" style="font-size:.5em"></span>' +
+        '<div class="fcf-epic-header">' +
+            '<span></span>' +
+            '<span class="fa fa-shopping-cart"></span>' +
+            '<span class="badge badge-pill badge-primary"></span>' +
         '</div>';
 
     var agl_sessions = [];
@@ -142,7 +143,7 @@ define('fcf-epic', [], function() {
             var header = $(HEADER).hide().insertBefore(getIFrame(source));
             session = {source: source, cart: [], header: header};
             agl_sessions.push(session);
-            header.tooltip({
+            header.find('.fa').tooltip({
                 html: true,
                 title: function() {return '<span class="text-monospace">' + session.cart.join('\n') + '</span>'}
             });

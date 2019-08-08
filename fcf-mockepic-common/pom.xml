@@ -19,7 +19,8 @@
         <systemjs>
             {
             'paths': {
-                'fcf-epic': 'js/fcf-epic'
+                'fcf-epic': 'js/fcf-epic',
+                'fcf-epic-css': 'css/fcf-epic'
                 }
             }
         </systemjs>
