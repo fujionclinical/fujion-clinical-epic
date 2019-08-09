@@ -9,7 +9,7 @@
         <bean class="org.fujionclinical.epic.common.agl.AglService" />
 
         <bean parent="smartContextBase" depends-on="encounterContext"
-              class="org.fujionclinical.epic.${fcf.mockepic.fhir.version}.SmartContextEncounter" />
+              class="org.fujionclinical.epic.${fhir.context.version}.SmartContextEncounter" />
 
     </beans>
 </beans>
