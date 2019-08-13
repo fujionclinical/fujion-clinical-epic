@@ -22,7 +22,7 @@
         </dependency>
         <dependency>
             <groupId>org.fujionclinical</groupId>
-            <artifactId>fcf-fhir-smart-dstu2</artifactId>
+            <artifactId>fcf-fhir-api-dstu2</artifactId>
             <version>${project.parent.version}</version>
         </dependency>
     </dependencies>

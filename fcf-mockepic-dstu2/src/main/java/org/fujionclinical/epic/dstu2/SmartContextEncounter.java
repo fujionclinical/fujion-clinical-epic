@@ -27,22 +27,15 @@ package org.fujionclinical.epic.dstu2;
 
 import ca.uhn.fhir.model.dstu2.composite.IdentifierDt;
 import ca.uhn.fhir.model.dstu2.resource.Encounter;
+import org.fujionclinical.epic.common.smart.SmartContextEncounterBase;
 import org.fujionclinical.fhir.dstu2.api.common.FhirUtil;
 import org.fujionclinical.fhir.dstu2.api.encounter.EncounterContext;
-import org.fujionclinical.fhir.smart.common.SmartContextBase;
 import org.fujionclinical.epic.common.core.Constants;
 
 /**
  * Implements SMART context scope to supply CSN in SMART context.
  */
-public class SmartContextEncounter extends SmartContextBase {
-
-    /**
-     * Binds encounter context changes to the SMART encounter context scope.
-     */
-    public SmartContextEncounter() {
-        super("encounter.epic", "CONTEXT.CHANGED.Encounter");
-    }
+public class SmartContextEncounter extends SmartContextEncounterBase {
 
     /**
      * Populate context map with information about currently selected encounter.
