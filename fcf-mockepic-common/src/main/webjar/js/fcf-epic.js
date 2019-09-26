@@ -48,7 +48,7 @@ define('fcf-epic', ['fcf-epic-css'], function() {
          */
         SAVE_STATE: "Epic.Clinical.Informatics.Web.SaveState",
         /**
-         * Launches an Epic activity (Epic 2018+).
+         * Launches an Epic activity (Epic 2019+).
          */
         LAUNCH_ACTIVITY: "Epic.Clinical.Informatics.Web.LaunchActivity"
     };
