@@ -16,14 +16,6 @@
 
     <properties>
         <webjar.name>fcf-epic</webjar.name>
-        <systemjs>
-            {
-            'paths': {
-                'fcf-epic': 'js/fcf-epic',
-                'fcf-epic-css': 'css/fcf-epic'
-                }
-            }
-        </systemjs>
     </properties>
 
     <dependencies>
