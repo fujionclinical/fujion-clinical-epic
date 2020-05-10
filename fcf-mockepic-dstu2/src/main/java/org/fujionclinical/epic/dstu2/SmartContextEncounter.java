@@ -28,8 +28,8 @@ package org.fujionclinical.epic.dstu2;
 import ca.uhn.fhir.model.dstu2.composite.IdentifierDt;
 import ca.uhn.fhir.model.dstu2.resource.Encounter;
 import org.fujionclinical.epic.common.smart.SmartContextEncounterBase;
-import org.fujionclinical.fhir.dstu2.api.common.FhirUtil;
-import org.fujionclinical.fhir.dstu2.api.encounter.EncounterContext;
+import org.fujionclinical.fhir.api.dstu2.common.FhirUtil;
+import org.fujionclinical.fhir.api.dstu2.encounter.EncounterContext;
 import org.fujionclinical.epic.common.core.Constants;
 
 /**
