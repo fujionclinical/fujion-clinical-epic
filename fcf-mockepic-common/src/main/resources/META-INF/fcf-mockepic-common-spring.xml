@@ -11,5 +11,7 @@
         <bean parent="smartContextBase" depends-on="encounterContext"
               class="org.fujionclinical.epic.${fhir.context.version}.SmartContextEncounter" />
 
+        <bean init-method="getInstance"
+              class="org.fujionclinical.epic.common.servlet.MockEpicServiceRegistry" />
     </beans>
 </beans>
