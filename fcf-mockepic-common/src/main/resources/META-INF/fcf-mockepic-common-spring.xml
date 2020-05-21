@@ -9,7 +9,7 @@
         <bean class="org.fujionclinical.epic.common.agl.AglService" />
 
         <bean parent="smartContextBase" depends-on="encounterContext"
-              class="org.fujionclinical.epic.${fhir.context.version}.SmartContextEncounter" />
+              class="org.fujionclinical.epic.common.smart.SmartContextEncounter" />
 
         <bean init-method="getInstance"
               class="org.fujionclinical.epic.common.servlet.MockEpicServiceRegistry" />

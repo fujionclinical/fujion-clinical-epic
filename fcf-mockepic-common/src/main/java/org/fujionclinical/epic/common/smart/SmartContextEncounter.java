@@ -23,19 +23,25 @@
  *
  * #L%
  */
-package org.fujionclinical.epic.dstu2;
+package org.fujionclinical.epic.common.smart;
 
-import ca.uhn.fhir.model.dstu2.composite.IdentifierDt;
-import ca.uhn.fhir.model.dstu2.resource.Encounter;
-import org.fujionclinical.epic.common.smart.SmartContextEncounterBase;
-import org.fujionclinical.fhir.api.dstu2.common.FhirUtil;
-import org.fujionclinical.fhir.api.dstu2.encounter.EncounterContext;
+import org.fujionclinical.api.encounter.EncounterContext;
+import org.fujionclinical.api.encounter.IEncounter;
+import org.fujionclinical.api.model.Identifier;
 import org.fujionclinical.epic.common.core.Constants;
+import org.fujionclinical.fhir.smart.common.SmartContextBase;
 
 /**
  * Implements SMART context scope to supply CSN in SMART context.
  */
-public class SmartContextEncounter extends SmartContextEncounterBase {
+public class SmartContextEncounter extends SmartContextBase {
+
+    /**
+     * Binds encounter context changes to the SMART encounter context scope.
+     */
+    public SmartContextEncounter() {
+        super(Constants.ENCOUNTER_SCOPE, "CONTEXT.CHANGED.Encounter");
+    }
 
     /**
      * Populate context map with information about currently selected encounter.
@@ -44,12 +50,11 @@ public class SmartContextEncounter extends SmartContextEncounterBase {
      */
     @Override
     protected void updateContext(ContextMap context) {
-        Encounter encounter = EncounterContext.getActiveEncounter();
-        IdentifierDt id = encounter == null ? null : FhirUtil.getIdentifierBySystem(encounter.getIdentifier(), Constants.CSN_SYSTEM);
+        IEncounter encounter = EncounterContext.getActiveEncounter();
+        Identifier id = encounter == null ? null : encounter.getIdentifier(Constants.CSN_SYSTEM);
 
         if (id != null) {
             context.put("csn", id.getValue());
         }
     }
-
 }

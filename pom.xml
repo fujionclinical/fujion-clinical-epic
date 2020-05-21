@@ -16,10 +16,6 @@
 
 	<modules>
 		<module>fcf-mockepic-common</module>
-		<module>fcf-mockepic-dstu2</module>
-		<module>fcf-mockepic-stu3</module>
-		<module>fcf-mockepic-r4</module>
-		<module>fcf-mockepic-r5</module>
 	</modules>
 	
     <dependencies>
