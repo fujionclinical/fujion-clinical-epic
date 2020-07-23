@@ -305,6 +305,7 @@ define('fcf-epic', ['fcf-epic-css'], function() {
      * Send a response back to the iframe window.
      *
      * @param response The AGL response.
+     * @param session The AGL session.
      */
     function sendResponse(response, session) {
         if (response) {
