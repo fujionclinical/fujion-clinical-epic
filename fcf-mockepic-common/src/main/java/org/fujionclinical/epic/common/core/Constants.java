@@ -32,7 +32,7 @@ public class Constants {
 
     public static final String CSN_SYSTEM = "http://epic.com/csn";
 
-    public static final String ENCOUNTER_SCOPE = "epic.encounter";
+    public static final String ENCOUNTER_SCOPE = "encounter";
 
     private Constants() {}
 }
