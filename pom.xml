@@ -15,7 +15,8 @@
     <packaging>pom</packaging>
 
 	<modules>
-		<module>fcf-mockepic-common</module>
+        <module>fcf-mockepic-common</module>
+        <module>fcf-mockepic-service</module>
 	</modules>
 	
     <dependencies>

@@ -23,7 +23,7 @@
  *
  * #L%
  */
-package org.fujionclinical.epic.common.servlet;
+package org.fujionclinical.epic.service;
 
 import org.fujionclinical.api.spring.BeanRegistry;
 
