@@ -25,9 +25,9 @@
  */
 package org.fujionclinical.epic.common.smart;
 
+import edu.utah.kmm.model.cool.clinical.encounter.Encounter;
 import edu.utah.kmm.model.cool.core.datatype.Identifier;
 import org.fujionclinical.api.model.encounter.EncounterContext;
-import org.fujionclinical.api.model.encounter.IEncounter;
 import org.fujionclinical.epic.common.core.Constants;
 import org.fujionclinical.fhir.smart.common.SmartContextBase;
 
@@ -50,8 +50,8 @@ public class SmartContextEncounter extends SmartContextBase {
      */
     @Override
     protected void updateContext(ContextMap context) {
-        IEncounter encounter = EncounterContext.getActiveEncounter();
-        Identifier id = encounter == null ? null : encounter.getIdentifier(Constants.CSN_SYSTEM);
+        Encounter encounter = EncounterContext.getActiveEncounter();
+        Identifier id = encounter == null ? null : encounter.findFirst(Constants.CSN_SYSTEM);
 
         if (id != null) {
             context.put("csn", id.getId());
