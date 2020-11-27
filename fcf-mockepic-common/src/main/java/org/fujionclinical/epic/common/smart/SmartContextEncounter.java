@@ -51,7 +51,7 @@ public class SmartContextEncounter extends SmartContextBase {
     @Override
     protected void updateContext(ContextMap context) {
         Encounter encounter = EncounterContext.getActiveEncounter();
-        Identifier id = encounter == null ? null : encounter.findFirst(Constants.CSN_SYSTEM);
+        Identifier id = encounter == null ? null : encounter.findFirstIdentifier(Constants.CSN_SYSTEM);
 
         if (id != null) {
             context.put("csn", id.getId());

@@ -25,12 +25,14 @@
  */
 package org.fujionclinical.epic.common.core;
 
+import java.net.URI;
+
 /**
  * Epic-related constants.
  */
 public class Constants {
 
-    public static final String CSN_SYSTEM = "http://epic.com/csn";
+    public static final URI CSN_SYSTEM = URI.create("http://epic.com/csn");
 
     public static final String ENCOUNTER_SCOPE = "encounter";
 
