@@ -27,7 +27,7 @@ package org.fujionclinical.epic.common.smart;
 
 import edu.utah.kmm.model.cool.clinical.encounter.Encounter;
 import edu.utah.kmm.model.cool.core.datatype.Identifier;
-import org.fujionclinical.api.model.encounter.EncounterContext;
+import org.fujionclinical.api.cool.encounter.EncounterContext;
 import org.fujionclinical.epic.common.core.Constants;
 import org.fujionclinical.fhir.smart.common.SmartContextBase;
 
