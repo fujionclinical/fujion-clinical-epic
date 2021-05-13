@@ -23,20 +23,27 @@
  *
  * #L%
  */
-package org.fujionclinical.epic.healthmaintenance;
-
-import org.fujionclinical.epic.service.IMockEpicService;
+package org.fujionclinical.epic.service;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.io.PrintWriter;
 
-public class HealthMaintenanceService implements IMockEpicService {
+public class SimpleMockEpicService implements IMockEpicService {
+
+    private final String path;
+
+    private final String response;
+
+    public SimpleMockEpicService(String path, String response) {
+        this.path = path;
+        this.response = response;
+    }
 
     @Override
     public String path() {
-        return "rest/RefreshHealthMaintenance";
+        return path;
     }
 
     @Override
@@ -45,7 +52,7 @@ public class HealthMaintenanceService implements IMockEpicService {
             HttpServletResponse servletResponse) {
         try {
             PrintWriter writer = servletResponse.getWriter();
-            writer.println("{\"success\": true}");
+            writer.println(response);
             writer.close();
         } catch (IOException e) {
             // NOP

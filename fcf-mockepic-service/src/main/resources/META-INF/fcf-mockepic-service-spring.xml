@@ -17,5 +17,13 @@
     <bean factory-method="getInstance"
           class="org.fujionclinical.epic.service.MockEpicServiceRegistry" />
 
-    <bean class="org.fujionclinical.epic.healthmaintenance.HealthMaintenanceService" />
+    <bean class="org.fujionclinical.epic.service.SimpleMockEpicService">
+        <constructor-arg value="rest/RefreshHealthMaintenance" />
+        <constructor-arg value='{"success": true}' />
+    </bean>
+
+    <bean class="org.fujionclinical.epic.service.SimpleMockEpicService">
+        <constructor-arg value="epic/UU/2020/Utah/Patient/CanPlaceOrderUsingTemplate" />
+        <constructor-arg value='{"Result": true}' />
+    </bean>
 </beans>
