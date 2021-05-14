@@ -25,11 +25,6 @@
  */
 package org.fujionclinical.epic.service;
 
-import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpServletResponse;
-import java.io.IOException;
-import java.io.PrintWriter;
-
 public class SimpleMockEpicService implements IMockEpicService {
 
     private final String path;
@@ -47,16 +42,8 @@ public class SimpleMockEpicService implements IMockEpicService {
     }
 
     @Override
-    public void invoke(
-            HttpServletRequest servletRequest,
-            HttpServletResponse servletResponse) {
-        try {
-            PrintWriter writer = servletResponse.getWriter();
-            writer.println(response);
-            writer.close();
-        } catch (IOException e) {
-            // NOP
-        }
+    public String getResponse() {
+        return response;
     }
 
 }

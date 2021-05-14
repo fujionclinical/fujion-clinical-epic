@@ -27,11 +27,23 @@ package org.fujionclinical.epic.service;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import java.io.IOException;
+import java.io.PrintWriter;
 
 public interface IMockEpicService {
 
     String path();
 
-    void invoke(HttpServletRequest servletRequest, HttpServletResponse servletResponse);
+    String getResponse();
+
+    default void invoke(HttpServletRequest servletRequest, HttpServletResponse servletResponse) {
+        try {
+            PrintWriter writer = servletResponse.getWriter();
+            writer.println(getResponse());
+            writer.close();
+        } catch (IOException e) {
+            // NOP
+        }
+    }
 
 }

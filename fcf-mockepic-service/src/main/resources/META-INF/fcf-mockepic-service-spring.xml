@@ -19,11 +19,11 @@
 
     <bean class="org.fujionclinical.epic.service.SimpleMockEpicService">
         <constructor-arg value="rest/RefreshHealthMaintenance" />
-        <constructor-arg value='{"success": true}' />
+        <constructor-arg value='{"success": ${org.fujionclinical.epic.service.RefreshHealthMaintenance:true}}' />
     </bean>
 
     <bean class="org.fujionclinical.epic.service.SimpleMockEpicService">
         <constructor-arg value="epic/UU/2020/Utah/Patient/CanPlaceOrderUsingTemplate" />
-        <constructor-arg value='{"Result": true}' />
+        <constructor-arg value='{"Result": ${org.fujionclinical.epic.service.CanPlaceOrderUsingTemplate:true}}' />
     </bean>
 </beans>
