@@ -26,7 +26,7 @@
 package org.fujionclinical.epic.common.smart;
 
 import org.coolmodel.clinical.encounter.Encounter;
-import org.coolmodel.core.datatype.Identifier;
+import org.coolmodel.core.complex.Identifier;
 import org.fujionclinical.api.cool.encounter.EncounterContext;
 import org.fujionclinical.epic.common.core.Constants;
 import org.fujionclinical.fhir.smart.common.SmartContextBase;
